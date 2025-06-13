@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hazır Ustam Başvuru Formu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      padding: 20px;
+      color: #333;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    #digerAciklama {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Hazır Ustam Başvuru Formu</h2>
+    <form>
+      <label for="ad">Ad Soyad</label>
+      <input type="text" id="ad" name="ad" required>
+
+      <label for="telefon">Telefon</label>
+      <input type="tel" id="telefon" name="telefon" required>
+
+      <label for="email">E-Posta</label>
+      <input type="email" id="email" name="email">
+
+      <label>İhtiyaç Duyulan Hizmetler</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="hizmet" value="boya"> Boya / Badana</label>
+        <label><input type="checkbox" name="hizmet" value="elektrik"> Elektrik Tadilatı</label>
+        <label><input type="checkbox" name="hizmet" value="su"> Su Tesisatı</label>
+        <label><input type="checkbox" name="hizmet" value="alcipan"> Alçıpan / Bölme Duvar</label>
+        <label><input type="checkbox" name="hizmet" value="zemin"> Zemin Kaplama</label>
+        <label><input type="checkbox" name="hizmet" value="mutfak"> Mutfak / Banyo Yenileme</label>
+        <label><input type="checkbox" name="hizmet" value="mobilya"> Özel Mobilya</label>
+        <label><input type="checkbox" name="hizmet" value="parke"> Parke İşçilik Yapılması</label>
+        <label><input type="checkbox" name="hizmet" value="seramik"> Seramik İşçilik Yapılması</label>
+        <label><input type="checkbox" name="hizmet" value="duvarkagidi"> Duvar Kağıdı</label>
+        <label><input type="checkbox" name="hizmet" value="kapi"> İç Kapı Montajı</label>
+        <label><input type="checkbox" id="digerCheck" value="diger"> Diğer</label>
+      </div>
+      <textarea id="digerAciklama" name="digerAciklama" placeholder="Lütfen diğer hizmeti açıklayın..."></textarea>
+
+      <label for="not">Ek Not</label>
+      <textarea id="not" name="not" rows="4"></textarea>
+
+      <button type="submit">Gönder</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('digerCheck').addEventListener('change', function () {
+      const digerAciklama = document.getElementById('digerAciklama');
+      digerAciklama.style.display = this.checked ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
